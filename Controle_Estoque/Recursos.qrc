@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/imagens">
+        <file>IKONS/PNG/32/cloud_fail.png</file>
+        <file>IKONS/PNG/32/cloud_ok.png</file>
+    </qresource>
+</RCC>
