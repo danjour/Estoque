@@ -21,6 +21,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    Conexao_db.h \
     logar.h \
     mainwindow.h
 

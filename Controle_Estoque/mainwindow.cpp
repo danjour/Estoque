@@ -8,18 +8,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    logado=false;
+    logado=true;
     closeCad.addFile(":/imagens/IKONS/PNG/32/cloud_fail.png");
     openCad.addFile(":/imagens/IKONS/PNG/32/cloud_ok.png");
 
     ui->bnt_block->setIcon(closeCad);
     ui->statusbar->addWidget(ui->bnt_block);
-    QString local=qApp->applicationDirPath();
-    QString banco=local+"controlEstoque.db";
-    basedeDados.setDatabaseName(banco);
-    if(!basedeDados.open()){
-        QMessageBox::warning(this,"ERRO", "Erro ao conectar ao DB");
-    }
+    ui->statusbar->addWidget(ui->fun_nome);
+
 }
 
 MainWindow::~MainWindow()
@@ -33,9 +29,17 @@ void MainWindow::on_bnt_block_clicked(){
     if(logado){
         logar f_logar;
         f_logar.exec();
+        logado=f_logar.getLogado();
+        nome_func=f_logar.getNome();
+        acesso_func=f_logar.getAcesso();
+        if(logado){
+            ui->bnt_block->setIcon(openCad);
+            ui->fun_nome->setText(nome_func);
+        }
     }else{
         logado=true;
          ui->bnt_block->setIcon(closeCad);
+         ui->fun_nome->setText(" ");
 
     }
 }

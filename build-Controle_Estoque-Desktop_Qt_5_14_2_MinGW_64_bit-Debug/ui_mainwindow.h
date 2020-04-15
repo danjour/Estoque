@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -32,6 +33,7 @@ public:
     QWidget *centralwidget;
     QPushButton *pushButton;
     QPushButton *bnt_block;
+    QLabel *fun_nome;
     QMenuBar *menubar;
     QMenu *menuGest_o;
     QMenu *menuSistema;
@@ -62,6 +64,9 @@ public:
         bnt_block->setObjectName(QString::fromUtf8("bnt_block"));
         bnt_block->setGeometry(QRect(20, 270, 32, 32));
         bnt_block->setFlat(true);
+        fun_nome = new QLabel(centralwidget);
+        fun_nome->setObjectName(QString::fromUtf8("fun_nome"));
+        fun_nome->setGeometry(QRect(70, 280, 47, 13));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -98,6 +103,7 @@ public:
         actionSobre->setText(QCoreApplication::translate("MainWindow", "Sobre", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Nova Venda", nullptr));
         bnt_block->setText(QString());
+        fun_nome->setText(QString());
         menuGest_o->setTitle(QCoreApplication::translate("MainWindow", "Gest\303\243o", nullptr));
         menuSistema->setTitle(QCoreApplication::translate("MainWindow", "Sistema", nullptr));
     } // retranslateUi

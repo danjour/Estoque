@@ -19,7 +19,7 @@ public:
     QIcon openCad;
     bool logado;
     QString nome_func, acesso_func;
-    QSqlDatabase basedeDados=QSqlDatabase::addDatabase("QSQLITE");
+
 
 private slots:
     void on_bnt_block_clicked();
