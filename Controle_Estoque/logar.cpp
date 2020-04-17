@@ -2,7 +2,7 @@
 #include "ui_logar.h"
 #include <QMessageBox>
 #include <QDebug>
-
+#include <mainwindow.h>
 
 logar::logar(QWidget *parent) :
     QDialog(parent),
@@ -28,14 +28,14 @@ void logar::on_btn_logar_clicked()
         senha=ui->senha->text();
         QSqlQuery query;
         qDebug()<<query.prepare("select * from tb_colaboradores where user_func='"+username+"' and senha_func='"+senha+"'");
-        qDebug()<<query.exec();
         qDebug() << query.lastError().text();
         if(query.exec()){
             query.first();
             if(query.value(1).toString()!=""){
-                logado=true;
-                nome=query.value(1).toString();
-                acesso=query.value(4).toString();
+                MainWindow::logado=true;
+                MainWindow::nome_func=query.value(1).toString();
+                MainWindow::id_colab= query.value(0).toInt();
+                MainWindow::acesso_func=query.value(5).toString();
                 con.fechar();
                 close();
             }else{
@@ -54,12 +54,3 @@ void logar::on_btn_cancelar_clicked()
     close();
 }
 
-bool logar::getLogado(){
-    return logado;
-}
-QString logar::getNome(){
-    return nome;
-}
-QString logar::getAcesso(){
-    return acesso;
-}

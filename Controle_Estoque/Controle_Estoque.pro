@@ -16,18 +16,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    estoque.cpp \
+    gestao_func.cpp \
+    gestao_venda.cpp \
     logar.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    nova_venda.cpp
 
 HEADERS += \
     Conexao_db.h \
+    estoque.h \
+    gestao_func.h \
+    gestao_venda.h \
     logar.h \
-    mainwindow.h
+    mainwindow.h \
+    nova_venda.h
 
 FORMS += \
+    estoque.ui \
+    gestao_func.ui \
+    gestao_venda.ui \
     logar.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    nova_venda.ui
 
 TRANSLATIONS += \
     Controle_Estoque_pt_BR.ts

@@ -1,0 +1,14 @@
+release/estoque.o
+release/gestao_func.o
+release/gestao_venda.o
+release/logar.o
+release/main.o
+release/mainwindow.o
+release/nova_venda.o
+release/qrc_Recursos.o
+release/moc_estoque.o
+release/moc_gestao_func.o
+release/moc_gestao_venda.o
+release/moc_logar.o
+release/moc_mainwindow.o
+release/moc_nova_venda.o

@@ -6,6 +6,8 @@
 class Conexao{
 public:
     QSqlDatabase basedeDados;
+    QString local;
+    QString banco;
     Conexao(){
         basedeDados=QSqlDatabase::addDatabase("QSQLITE");
     }
@@ -14,14 +16,19 @@ public:
     }
     bool abrir(){
         QString local=qApp->applicationDirPath();
-        qDebug() << local;
         QString banco=local+"/db/controlEstoque.db";
-        qDebug() <<banco;
         basedeDados.setDatabaseName(banco);
         if(!basedeDados.open()){
             return false;
         }else{
             return true;
+        }
+    }
+    bool aberto(){
+        if(basedeDados.isOpen()){
+            return true;
+        }else{
+            return false;
         }
     }
 };

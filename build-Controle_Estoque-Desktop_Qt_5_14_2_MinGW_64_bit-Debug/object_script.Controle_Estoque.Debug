@@ -1,0 +1,14 @@
+debug/estoque.o
+debug/gestao_func.o
+debug/gestao_venda.o
+debug/logar.o
+debug/main.o
+debug/mainwindow.o
+debug/nova_venda.o
+debug/qrc_Recursos.o
+debug/moc_estoque.o
+debug/moc_gestao_func.o
+debug/moc_gestao_venda.o
+debug/moc_logar.o
+debug/moc_mainwindow.o
+debug/moc_nova_venda.o

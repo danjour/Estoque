@@ -17,12 +17,17 @@ public:
     ~MainWindow();
     QIcon closeCad;
     QIcon openCad;
-    bool logado;
-    QString nome_func, acesso_func;
+    static bool logado;
+    static QString nome_func, acesso_func,user_func;
+    static int id_colab;
 
 
 private slots:
     void on_bnt_block_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_actionEstoque_triggered();
 
 private:
     Ui::MainWindow *ui;
