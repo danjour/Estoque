@@ -46,7 +46,7 @@ void MainWindow::on_bnt_block_clicked(){
             ui->fun_nome->setText(nome_func);
         }
     }else{
-        logado=true;
+        logado=false;
          ui->bnt_block->setIcon(closeCad);
          ui->fun_nome->setText(" ");
 
