@@ -8,6 +8,8 @@
 #include <gestao_func.h>
 #include <gestao_venda.h>
 
+
+
 int MainWindow::id_colab;
 QString MainWindow::nome_func;
 QString MainWindow::user_func;
@@ -19,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //Definido no pricipal as figuras que posteriormente poderão e provavelmente serão trocadas
     logado=false;
     closeCad.addFile(":/imagens/IKONS/PNG/32/cloud_fail.png");
     openCad.addFile(":/imagens/IKONS/PNG/32/cloud_ok.png");
@@ -36,7 +39,7 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::on_bnt_block_clicked(){
-
+    //Função para verificar se o usuário está logado
     if(!logado){
         logar f_logar;
         f_logar.exec();
@@ -45,7 +48,7 @@ void MainWindow::on_bnt_block_clicked(){
             ui->bnt_block->setIcon(openCad);
             ui->fun_nome->setText(nome_func);
         }
-    }else{
+    }else{//Antes existia o erro, caso o usuário deslogasse, ele continuava permitindo fazer edições, isso era por conta do logado abaixo, que deve estar sempre falso.
         logado=false;
          ui->bnt_block->setIcon(closeCad);
          ui->fun_nome->setText(" ");
@@ -64,7 +67,7 @@ void MainWindow::on_pushButton_clicked()
 }
 
 void MainWindow::on_actionEstoque_triggered()
-{
+{   //Definição da função  que irá verificar as possibilidades do operador
     if(logado){
         if(acesso_func=="A"){
             estoque f_estoque;

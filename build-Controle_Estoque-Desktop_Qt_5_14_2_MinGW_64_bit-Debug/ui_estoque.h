@@ -65,7 +65,7 @@ public:
     QGroupBox *groupBox;
     QRadioButton *ge_btcodigo;
     QRadioButton *ge_btproduto;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_11;
     QVBoxLayout *verticalLayout_10;
     QLabel *label_7;
@@ -83,7 +83,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QPushButton *ge_gravar;
     QPushButton *ge_excluir;
-    QWidget *widget1;
+    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_13;
     QVBoxLayout *verticalLayout_12;
     QLabel *label_13;
@@ -251,70 +251,70 @@ public:
         ge_btproduto = new QRadioButton(groupBox);
         ge_btproduto->setObjectName(QString::fromUtf8("ge_btproduto"));
         ge_btproduto->setGeometry(QRect(10, 50, 82, 17));
-        widget = new QWidget(tab_gestaoprod);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 22, 201, 391));
-        verticalLayout_11 = new QVBoxLayout(widget);
+        layoutWidget1 = new QWidget(tab_gestaoprod);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 22, 201, 391));
+        verticalLayout_11 = new QVBoxLayout(layoutWidget1);
         verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
         verticalLayout_11->setContentsMargins(0, 0, 0, 0);
         verticalLayout_10 = new QVBoxLayout();
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget1);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         verticalLayout_10->addWidget(label_7);
 
-        ge_codigo = new QLineEdit(widget);
+        ge_codigo = new QLineEdit(layoutWidget1);
         ge_codigo->setObjectName(QString::fromUtf8("ge_codigo"));
 
         verticalLayout_10->addWidget(ge_codigo);
 
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget1);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         verticalLayout_10->addWidget(label_8);
 
-        ge_produto = new QLineEdit(widget);
+        ge_produto = new QLineEdit(layoutWidget1);
         ge_produto->setObjectName(QString::fromUtf8("ge_produto"));
 
         verticalLayout_10->addWidget(ge_produto);
 
-        label_9 = new QLabel(widget);
+        label_9 = new QLabel(layoutWidget1);
         label_9->setObjectName(QString::fromUtf8("label_9"));
 
         verticalLayout_10->addWidget(label_9);
 
-        ge_quantidade = new QLineEdit(widget);
+        ge_quantidade = new QLineEdit(layoutWidget1);
         ge_quantidade->setObjectName(QString::fromUtf8("ge_quantidade"));
 
         verticalLayout_10->addWidget(ge_quantidade);
 
-        label_10 = new QLabel(widget);
+        label_10 = new QLabel(layoutWidget1);
         label_10->setObjectName(QString::fromUtf8("label_10"));
 
         verticalLayout_10->addWidget(label_10);
 
-        ge_valorcompra = new QLineEdit(widget);
+        ge_valorcompra = new QLineEdit(layoutWidget1);
         ge_valorcompra->setObjectName(QString::fromUtf8("ge_valorcompra"));
 
         verticalLayout_10->addWidget(ge_valorcompra);
 
-        label_11 = new QLabel(widget);
+        label_11 = new QLabel(layoutWidget1);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         verticalLayout_10->addWidget(label_11);
 
-        ge_valorvenda = new QLineEdit(widget);
+        ge_valorvenda = new QLineEdit(layoutWidget1);
         ge_valorvenda->setObjectName(QString::fromUtf8("ge_valorvenda"));
 
         verticalLayout_10->addWidget(ge_valorvenda);
 
-        label_12 = new QLabel(widget);
+        label_12 = new QLabel(layoutWidget1);
         label_12->setObjectName(QString::fromUtf8("label_12"));
 
         verticalLayout_10->addWidget(label_12);
 
-        ge_fornecedor = new QLineEdit(widget);
+        ge_fornecedor = new QLineEdit(layoutWidget1);
         ge_fornecedor->setObjectName(QString::fromUtf8("ge_fornecedor"));
 
         verticalLayout_10->addWidget(ge_fornecedor);
@@ -324,12 +324,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        ge_gravar = new QPushButton(widget);
+        ge_gravar = new QPushButton(layoutWidget1);
         ge_gravar->setObjectName(QString::fromUtf8("ge_gravar"));
 
         horizontalLayout_3->addWidget(ge_gravar);
 
-        ge_excluir = new QPushButton(widget);
+        ge_excluir = new QPushButton(layoutWidget1);
         ge_excluir->setObjectName(QString::fromUtf8("ge_excluir"));
 
         horizontalLayout_3->addWidget(ge_excluir);
@@ -337,20 +337,20 @@ public:
 
         verticalLayout_11->addLayout(horizontalLayout_3);
 
-        widget1 = new QWidget(tab_gestaoprod);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(366, 21, 141, 71));
-        verticalLayout_13 = new QVBoxLayout(widget1);
+        layoutWidget2 = new QWidget(tab_gestaoprod);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(366, 21, 141, 72));
+        verticalLayout_13 = new QVBoxLayout(layoutWidget2);
         verticalLayout_13->setObjectName(QString::fromUtf8("verticalLayout_13"));
         verticalLayout_13->setContentsMargins(0, 0, 0, 0);
         verticalLayout_12 = new QVBoxLayout();
         verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
-        label_13 = new QLabel(widget1);
+        label_13 = new QLabel(layoutWidget2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
 
         verticalLayout_12->addWidget(label_13);
 
-        ge_filtrar = new QLineEdit(widget1);
+        ge_filtrar = new QLineEdit(layoutWidget2);
         ge_filtrar->setObjectName(QString::fromUtf8("ge_filtrar"));
 
         verticalLayout_12->addWidget(ge_filtrar);
@@ -358,7 +358,7 @@ public:
 
         verticalLayout_13->addLayout(verticalLayout_12);
 
-        ge_filtrar_2 = new QPushButton(widget1);
+        ge_filtrar_2 = new QPushButton(layoutWidget2);
         ge_filtrar_2->setObjectName(QString::fromUtf8("ge_filtrar_2"));
 
         verticalLayout_13->addWidget(ge_filtrar_2);

@@ -26,6 +26,10 @@ private slots:
 
     void on_gestao_produto_currentChanged(int index);
 
+    void on_ge_tw_prod_itemSelectionChanged();
+
+    void on_ge_gravar_clicked();
+
 private:
     Ui::estoque *ui;
 };
