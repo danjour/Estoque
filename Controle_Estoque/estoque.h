@@ -30,6 +30,10 @@ private slots:
 
     void on_ge_gravar_clicked();
 
+    void on_ge_excluir_clicked();
+
+    void on_ge_filtrar_2_clicked();
+
 private:
     Ui::estoque *ui;
 };

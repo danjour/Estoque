@@ -367,7 +367,7 @@ public:
 
         retranslateUi(estoque);
 
-        gestao_produto->setCurrentIndex(0);
+        gestao_produto->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(estoque);

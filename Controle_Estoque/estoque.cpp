@@ -179,3 +179,60 @@ void estoque::on_ge_gravar_clicked()
         }
     }
 }
+
+void estoque::on_ge_excluir_clicked()
+{
+    if(ui->ge_codigo->text()==""){
+        QMessageBox::warning(this, "ERRO","Selecione o produto");
+    }else {
+        QMessageBox::StandardButton opc=QMessageBox::question(this,"Exclusão","Confirma a exclusão desse produto?",QMessageBox::Yes|QMessageBox::No);
+        if(opc==QMessageBox::Yes){
+            int linha=ui->ge_tw_prod->currentRow();
+            int id=ui->ge_tw_prod->item(linha,0)->text().toInt();
+            QSqlQuery query;
+            query.prepare("delete from tb_produtos where id_produto="+QString::number(id));
+            if(query.exec()){
+                ui->ge_tw_prod->removeRow(linha);
+                QMessageBox::information(this, "Deletado","Produto deletado");
+            }else{
+                QMessageBox::information(this, "Deletado","Produto não deletado");
+            }
+
+         }
+    }
+}
+
+void estoque::on_ge_filtrar_2_clicked()
+{
+
+    QSqlQuery query;
+    remover_linha(ui->ge_tw_prod);
+    if(ui->ge_filtrar->text()==""){
+        if(ui->ge_btcodigo->isChecked()){
+            query.prepare("select id_produto, produto, qt_estoque from tb_produtos order by id_produto");
+        }else{
+           query.prepare("select id_produto, produto, qt_estoque from tb_produtos order by produto");
+        }
+    }else{
+        if(ui->ge_btcodigo->isChecked()){
+            query.prepare("select id_produto, produto, qt_estoque from tb_produtos where id_produto="+ui->ge_filtrar->text()+" order by id_produto");
+        }else{
+            query.prepare("select id_produto, produto, qt_estoque from tb_produtos where produto like '%"+ui->ge_filtrar->text()+"%' order by produto");
+        }
+    }
+    int contlinhas=0;
+    qDebug() << query.lastError().text();
+    if(query.exec()){
+        while(query.next()){
+            ui->ge_tw_prod->insertRow(contlinhas);
+            ui->ge_tw_prod->setItem(contlinhas,0,new QTableWidgetItem(query.value(0).toString()));
+            ui->ge_tw_prod->setItem(contlinhas,1,new QTableWidgetItem(query.value(1).toString()));
+            ui->ge_tw_prod->setItem(contlinhas,2,new QTableWidgetItem(query.value(2).toString()));
+            ui->ge_tw_prod->setRowHeight(contlinhas,20);
+            contlinhas++;
+        }
+    }else{
+        QMessageBox::warning(this,"ERRO","Erro ao pesquisar produto");
+    }
+
+}
